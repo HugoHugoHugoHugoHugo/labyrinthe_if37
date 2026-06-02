@@ -16,6 +16,7 @@ public class ExplorationPlayerState : PlayerState
         stateMachine.GetComponent<Rigidbody>().isKinematic = true;
         initalPos = stateMachine.transform.position;
         marqueurAction = InputSystem.actions.FindAction("MarqueurAction");
+        stateMachine.Rumble(0.0f, 0.5f, 0.5f);
     }
 
     public override void Exit(PlayerStateMachine stateMachine)

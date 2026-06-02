@@ -13,6 +13,7 @@ public class ActionPlayerState : PlayerState
         Debug.Log("Entering Action State");
         stateMachine.GetComponent<Rigidbody>().isKinematic = false;
         gyroDirection = Vector3.zero;
+        stateMachine.Rumble(0.5f, 0.0f, 0.5f);
     }
 
     public override void Exit(PlayerStateMachine stateMachine)

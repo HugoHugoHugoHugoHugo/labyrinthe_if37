@@ -1,4 +1,5 @@
 using OperatorOverload.Bridge.Serialization;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -67,5 +68,19 @@ public class PlayerStateMachine : MonoBehaviour
         Camera.transform.rotation = Quaternion.Euler(Camera.transform.rotation.eulerAngles + gamepadRotation * CameraRotationSpeed * Time.deltaTime);
 
         transform.GetChild(0).transform.rotation = Camera.transform.rotation; // Pour le son
+    }
+
+    public void Rumble(float lowFreq, float highFreq, float seconds)
+    {
+        var command = DualShock4UsbOutputCommand.Create(lowFreq, highFreq, Color.blue);
+        Gamepad.current.ExecuteCommand(ref command);
+        StartCoroutine(StopRumble(seconds));
+    }
+
+    public IEnumerator StopRumble(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        var command = DualShock4UsbOutputCommand.Create(0f, 0f, Color.blue);
+        Gamepad.current.ExecuteCommand(ref command);
     }
 }

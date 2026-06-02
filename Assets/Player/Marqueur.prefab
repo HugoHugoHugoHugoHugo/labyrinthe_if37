@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 6c93b655b30e22f4fa35e47eeb2a6304, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +126,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 055f7fdb6ef51f34ca64a362ee4edd54, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -228,53 +228,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: faadec687df97af42ace3064f096a0f8, type: 3}
   - {fileID: 8300000, guid: 055f7fdb6ef51f34ca64a362ee4edd54, type: 3}
   - {fileID: 8300000, guid: d155725dd1dfd6a4289629d286a9df06, type: 3}
-  marqueurAction:
-    m_Name: Marqueur
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6f046132-92f4-40bb-a031-9637ec71a1fa
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 71e02393-0a4f-438e-976a-7c74e61d4cbb
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Marqueur
-      m_Flags: 4
-    - m_Name: up
-      m_Id: df74dc11-d34f-4a35-b6a2-ffb362aedee2
-      m_Path: <Gamepad>/buttonNorth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Marqueur
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 0484391d-902e-4b00-8211-3258fad15f08
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Marqueur
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 3fa6bdb2-397b-4665-8de3-6c79a58f7b0c
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Marqueur
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 3f41ad6c-c16d-42a8-b67e-2c0e56938dab
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Marqueur
-      m_Flags: 8
-    m_Flags: 0
-  marqueurNb: 0
+  MarqueurNumber: 0
+  Active: 1
