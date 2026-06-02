@@ -13,7 +13,7 @@ public class TerrainElement : MonoBehaviour
 
     void Start()
     {
-        m_source = GetComponent<AudioSource>();
+        m_source = GetComponentInChildren<AudioSource>();
     }
     void OnCollisionEnter(Collision collision)
     {
