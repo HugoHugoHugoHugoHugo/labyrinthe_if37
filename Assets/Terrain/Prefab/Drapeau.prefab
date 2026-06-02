@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658633575459511709}
   - component: {fileID: 3515154732799046166}
-  - component: {fileID: 7912091026704160975}
+  - component: {fileID: 3731351357391614880}
   - component: {fileID: 1679612295153990406}
   - component: {fileID: 4892418746004104190}
   m_Layer: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3006975833507228913}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7912091026704160975
+--- !u!114 &3731351357391614880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,9 +53,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3006975833507228913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7508987e0aa517f6be9814a9b02157f, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a76b791fd3173f5b844879ccb1c629, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TerrainElement
+  m_EditorClassIdentifier: Assembly-CSharp::FlagElement
   Caracteristics: {fileID: 11400000, guid: 78e45772efc055eb98293dd13996b53d, type: 2}
   OnContactSound: {fileID: 8300000, guid: 650f2ac2d247cc2a684ca2fbb6a8530e, type: 3}
   ContinuousSound: {fileID: 8300000, guid: 0e523647adbf1855bb9a7241c40c9510, type: 3}
@@ -124,7 +124,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

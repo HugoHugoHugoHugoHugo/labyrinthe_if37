@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4189838263024473001}
   - component: {fileID: 1172328426676856960}
   - component: {fileID: 4053810199028166367}
-  - component: {fileID: 6092569706036652903}
+  - component: {fileID: 8720880579645649823}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -114,7 +114,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6092569706036652903
+--- !u!114 &8720880579645649823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 69114427299261602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7508987e0aa517f6be9814a9b02157f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0131792f4f8bd5389bfaa6ffd372d7ea, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TerrainElement
+  m_EditorClassIdentifier: Assembly-CSharp::WallElement
   Caracteristics: {fileID: 11400000, guid: 69e4dbdaa7ea8228fa017993f1ffa8ad, type: 2}
   OnContactSound: {fileID: 8300000, guid: da678dd7d8da4f3ff8657c81c78e64f8, type: 3}
   ContinuousSound: {fileID: 8300000, guid: 4ad68731008e51d14ad9085f5cb80740, type: 3}

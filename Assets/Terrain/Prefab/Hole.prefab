@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4350382275495581973}
   - component: {fileID: 4166201074129511452}
-  - component: {fileID: 8035691493883324226}
+  - component: {fileID: 8880756043073776255}
   - component: {fileID: 785691800462947331}
   - component: {fileID: 6223490174967340009}
   m_Layer: 0
@@ -173,7 +173,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228747738272576280}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8035691493883324226
+--- !u!114 &8880756043073776255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,9 +182,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8228747738272576280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7508987e0aa517f6be9814a9b02157f, type: 3}
+  m_Script: {fileID: 11500000, guid: 86a2b3b9c78f7b642837a221591ab9f5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TerrainElement
+  m_EditorClassIdentifier: Assembly-CSharp::HoleElement
   Caracteristics: {fileID: 11400000, guid: d4ff084718f54b24f8245fe238b487a7, type: 2}
   OnContactSound: {fileID: 0}
   ContinuousSound: {fileID: 8300000, guid: 2a3d5b4dcd472566f8ea8c7905136671, type: 3}
