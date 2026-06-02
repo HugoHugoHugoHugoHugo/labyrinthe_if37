@@ -1,4 +1,5 @@
 using OperatorOverload.Bridge.Serialization;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.DualShock;
@@ -8,13 +9,16 @@ public class PlayerStateMachine : MonoBehaviour
 
     public GameObject Terrain;
     public Camera Camera;
+    public MarqueurBehavior MarqueurPrefab;
 
-    public float CameraRotationSpeed = 10f;
+    public float CameraRotationSpeed = 80f;
 
     public PlayerState explorationState = new ExplorationPlayerState();
     public PlayerState actionState = new ActionPlayerState();
 
     public Gamepad gamepad;
+    [HideInInspector]
+    public List<MarqueurBehavior> Marqueurs = new List<MarqueurBehavior>();
 
     private PlayerState _state = null;
 
@@ -22,6 +26,18 @@ public class PlayerStateMachine : MonoBehaviour
     {
         GetComponent<Rigidbody>().sleepThreshold = 0f;
         SetState(actionState);
+        GenerateMarqueurs();
+    }
+
+    private void GenerateMarqueurs()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            MarqueurBehavior marqueur = Instantiate(MarqueurPrefab);
+            marqueur.Active = false;
+            marqueur.Init(i);
+            Marqueurs.Add(marqueur);
+        }
     }
 
     void Update()

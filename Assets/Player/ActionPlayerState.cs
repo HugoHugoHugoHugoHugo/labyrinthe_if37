@@ -24,7 +24,7 @@ public class ActionPlayerState : PlayerState
         //RotateTerrain(stateMachine, deltaTime);
         ApplyForceToBall(stateMachine, deltaTime);
 
-        if (Gamepad.current.buttonEast.isPressed)
+        if (Gamepad.current.leftShoulder.isPressed)
         {
             return stateMachine.explorationState;
         }
@@ -48,10 +48,11 @@ public class ActionPlayerState : PlayerState
         Vector3 globalForce = (localForce.x * stateMachine.Camera.transform.right) + (localForce.z * stateMachine.Camera.transform.forward);
         rb.AddForce(globalForce * forceCoeff * deltaTime);
     }
+
     private void UpdateGyro(float deltaTime)
     {
         gyroDirection += GetControllerAngularVeclocity() * deltaTime;
-        if (Gamepad.current.buttonSouth.isPressed)
+        if (Gamepad.current.rightShoulder.isPressed)
         {
             gyroDirection = Vector3.zero;
         }
