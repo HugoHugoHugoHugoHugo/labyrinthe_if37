@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class ExplorationPlayerState : PlayerState
 {
 
-    private float speed = 3f;
+    private float forceCoeff = 500f;
     private Vector3 initalPos;
 
     private InputAction marqueurAction;
@@ -12,8 +12,7 @@ public class ExplorationPlayerState : PlayerState
     public override void Enter(PlayerStateMachine stateMachine)
     {
         Debug.Log("Entering Exploration State");
-        //stateMachine.Terrain.transform.rotation = Quaternion.Euler(Vector3.zero);
-        stateMachine.GetComponent<Rigidbody>().isKinematic = true;
+        stateMachine.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         initalPos = stateMachine.transform.position;
         marqueurAction = InputSystem.actions.FindAction("MarqueurAction");
         stateMachine.Rumble(0.0f, 0.5f, 0.5f);
@@ -40,8 +39,12 @@ public class ExplorationPlayerState : PlayerState
     {
         Vector2 direction = Gamepad.current.leftStick.ReadValue();
         Vector3 globalDelta = (direction.x * stateMachine.Camera.transform.right) + (direction.y * stateMachine.Camera.transform.forward);
-        Vector3 newPos = stateMachine.transform.position + globalDelta * speed * deltaTime;
-        stateMachine.transform.position = newPos;
+        stateMachine.GetComponent<Rigidbody>().AddForce(globalDelta * forceCoeff * deltaTime);
+
+        if (direction.magnitude > 0.1)
+            stateMachine.GetComponent<Rigidbody>().linearDamping = 2f;
+        else
+            stateMachine.GetComponent<Rigidbody>().linearDamping = 10f;
     }
 
     public void PlaceMarqueur(PlayerStateMachine stateMachine)

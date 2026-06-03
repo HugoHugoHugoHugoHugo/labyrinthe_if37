@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HoleElement : TerrainElement
 {
@@ -6,12 +7,15 @@ public class HoleElement : TerrainElement
     {
         if (other.gameObject.tag == "Player")
         {
-            HoleHit();
-            Debug.Log("Hit a hole");
+            other.gameObject.GetComponent<PlayerStateMachine>().Rumble(1f, 0.1f, 1f);
+            if (other.gameObject.GetComponent<PlayerStateMachine>().State is ActionPlayerState)
+                HoleHit();
         }
     }
     void HoleHit()
     {
-        
+        Debug.Log("Hit a hole");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
