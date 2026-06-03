@@ -8,7 +8,6 @@ using UnityEngine.InputSystem.DualShock;
 public class PlayerStateMachine : MonoBehaviour
 {
 
-    public GameObject Terrain;
     public Camera Camera;
     public MarqueurBehavior MarqueurPrefab;
 

@@ -58,16 +58,4 @@ public class ActionPlayerState : PlayerState
             gyroDirection = Vector3.zero;
         }
     }
-
-    private void RotateTerrain(PlayerStateMachine stateMachine, float deltaTime)
-    {
-        Vector3 controllerRotation = GetControllerAngularVeclocity();
-
-        stateMachine.Terrain.transform.rotation = Quaternion.Euler(stateMachine.Terrain.transform.rotation.eulerAngles + controllerRotation * deltaTime);
-
-        if (Gamepad.current.buttonSouth.isPressed)
-        {
-            stateMachine.Terrain.transform.rotation = Quaternion.Euler(Vector3.zero);
-        }
-    }
 }
