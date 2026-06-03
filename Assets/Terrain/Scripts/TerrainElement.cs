@@ -33,12 +33,10 @@ public class TerrainElement : MonoBehaviour
         Vector3 objectPos = transform.position;
         //Gives the position of the player from the object's origin (center of the object)
         Vector3 playerDirection = playerPos - objectPos;
-        //Transform the vector representing the object's dimensions from local scale to global scale
-        Vector3 globalBoundSize = transform.TransformDirection(m_boundsSize);
         //Make sure the new position is within bounds of the object
-        Vector3 newPos = new Vector3(Mathf.Sign(playerDirection.x)*Mathf.Min(Mathf.Abs(playerDirection.x), globalBoundSize.x*.5f), 
-            Mathf.Sign(playerDirection.y)*Mathf.Min(Mathf.Abs(playerDirection.y), globalBoundSize.y*.5f),
-            Mathf.Sign(playerDirection.z)*Mathf.Min(Mathf.Abs(playerDirection.z), globalBoundSize.z*.5f));
+        Vector3 newPos = new Vector3(Mathf.Sign(playerDirection.x)*Mathf.Min(Mathf.Abs(playerDirection.x), m_boundsSize.x*.5f), 
+            Mathf.Sign(playerDirection.y)*Mathf.Min(Mathf.Abs(playerDirection.y), m_boundsSize.y*.5f),
+            Mathf.Sign(playerDirection.z)*Mathf.Min(Mathf.Abs(playerDirection.z), m_boundsSize.z*.5f));
         //Move the audio source to the new position
         Source.transform.position = transform.position + newPos;
     }
