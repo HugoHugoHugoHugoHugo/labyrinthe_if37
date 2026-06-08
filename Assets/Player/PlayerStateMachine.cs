@@ -1,4 +1,5 @@
 using OperatorOverload.Bridge.Serialization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,11 @@ public class PlayerStateMachine : MonoBehaviour
     public Gamepad gamepad;
     [HideInInspector]
     public List<MarqueurBehavior> Marqueurs = new List<MarqueurBehavior>();
+
+    [HideInInspector]
+    public delegate void PlayerCollisionEvent(Collision collision);
+    [HideInInspector]
+    public PlayerCollisionEvent CollisionEvent;
 
     private PlayerState _state = null;
 
@@ -81,5 +87,10 @@ public class PlayerStateMachine : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         var command = DualShock4UsbOutputCommand.Create(0f, 0f, Color.blue);
         Gamepad.current.ExecuteCommand(ref command);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        CollisionEvent.Invoke(collision);
     }
 }
