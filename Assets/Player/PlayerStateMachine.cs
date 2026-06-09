@@ -18,6 +18,7 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerState actionState = new ActionPlayerState();
 
     public Gamepad gamepad;
+
     [HideInInspector]
     public List<MarqueurBehavior> Marqueurs = new List<MarqueurBehavior>();
 
@@ -26,7 +27,7 @@ public class PlayerStateMachine : MonoBehaviour
     [HideInInspector]
     public PlayerCollisionEvent CollisionEvent;
 
-    private PlayerState _state = null;
+    public PlayerState State = null;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
         HandleCamera();
 
-        PlayerState newState = _state.Update(this, Time.deltaTime);
+        PlayerState newState = State.Update(this, Time.deltaTime);
         if (newState != null)
         {
             SetState(newState);
@@ -59,10 +60,10 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void SetState(PlayerState newState)
     {
-        if (_state != null)
-            _state.Exit(this);
-        _state = newState;
-        _state.Enter(this);
+        if (State != null)
+            State.Exit(this);
+        State = newState;
+        State.Enter(this);
     }
 
     private void HandleCamera()

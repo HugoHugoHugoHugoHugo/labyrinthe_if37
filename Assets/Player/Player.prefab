@@ -164,7 +164,7 @@ Rigidbody:
   m_GameObject: {fileID: 7362649643838355380}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -194,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ac9d444d7c4f84e86866cbc8ae123e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
-  Terrain: {fileID: 0}
   Camera: {fileID: 0}
   MarqueurPrefab: {fileID: 6927105789452428306, guid: 7833e870317f33843afa64a4ab114f6f, type: 3}
   CameraRotationSpeed: 80

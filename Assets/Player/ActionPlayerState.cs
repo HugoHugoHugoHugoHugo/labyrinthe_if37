@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 public class ActionPlayerState : PlayerState
 {
 
-    private float forceCoeff = 3f;
+    private float forceCoeff = 6f;
     private Vector3 gyroDirection;
 
     public override void Enter(PlayerStateMachine stateMachine)
     {
         Debug.Log("Entering Action State");
-        stateMachine.GetComponent<Rigidbody>().isKinematic = false;
+        stateMachine.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        stateMachine.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        stateMachine.GetComponent<Rigidbody>().linearDamping = 2f;
         gyroDirection = Vector3.zero;
         stateMachine.Rumble(0.5f, 0.0f, 0.5f);
     }
@@ -58,4 +60,5 @@ public class ActionPlayerState : PlayerState
             gyroDirection = Vector3.zero;
         }
     }
+
 }

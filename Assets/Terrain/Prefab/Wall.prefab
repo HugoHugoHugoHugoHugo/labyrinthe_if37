@@ -140,7 +140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7691663696628264419}
   - component: {fileID: 1748342709600354877}
-  - component: {fileID: 9205996421918677590}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
