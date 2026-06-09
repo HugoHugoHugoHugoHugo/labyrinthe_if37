@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class WallElement : TerrainElement
 {
@@ -7,6 +8,7 @@ public class WallElement : TerrainElement
     {
         if (collision.gameObject.tag == "Player")
         {
+            Vector3 playerVelocity = collision.gameObject.GetComponent<Rigidbody>().linearVelocity;
             Source.PlayOneShot(OnContactSound);
             Source.Play();
         }
@@ -17,8 +19,8 @@ public class WallElement : TerrainElement
         {
             Vector3 playerVelocity = collision.gameObject.GetComponent<Rigidbody>().linearVelocity;
             Debug.Log(playerVelocity.magnitude);
-            Source.pitch=SuperLerp(0.7f,1f,0f,.5f,playerVelocity.magnitude);
-            Source.volume=SuperLerp(0f,1f,0f,.5f,playerVelocity.magnitude);
+            Source.pitch=Map(playerVelocity.magnitude,0f,1f,0.7f,1f);
+            Source.volume=Map(playerVelocity.magnitude,0f, 1f,0f,2f);
         }
     }
     void OnCollisionExit(Collision collision)
@@ -28,7 +30,7 @@ public class WallElement : TerrainElement
             Source.Stop();
         }
     }
-    private float SuperLerp (float from,float to,float from2,float to2,float value) {
+    public static float SuperLerp (float from,float to,float from2,float to2,float value) {
         if (value <= from2)
         {
             return from;
@@ -38,5 +40,10 @@ public class WallElement : TerrainElement
             return to;
         }
         return (to - from) * ((value - from2) / (to2 - from2)) + from;
+    }
+
+    public static float Map(float s, float a1, float a2, float b1, float b2)
+    {
+        return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
     }
 }

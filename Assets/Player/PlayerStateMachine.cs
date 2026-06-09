@@ -29,11 +29,14 @@ public class PlayerStateMachine : MonoBehaviour
 
     public PlayerState State = null;
 
+    private Vector3 direction = new Vector3(0, 0, 0);
+
     void Start()
     {
         GetComponent<Rigidbody>().sleepThreshold = 0f;
         SetState(actionState);
         GenerateMarqueurs();
+        direction = transform.forward;
     }
 
     private void GenerateMarqueurs()
@@ -56,6 +59,8 @@ public class PlayerStateMachine : MonoBehaviour
         {
             SetState(newState);
         }
+
+        SetRollVolume();
     }
 
     private void SetState(PlayerState newState)
@@ -68,12 +73,20 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void HandleCamera()
     {
-        Camera.transform.position = transform.position - Camera.transform.forward * 4f;
+        Vector3 gamepadRotation = new Vector3(0, -Gamepad.current.rightStick.ReadValue().x, 0) * CameraRotationSpeed * Time.deltaTime;
+        direction = Quaternion.Euler(gamepadRotation) * direction;
 
-        Vector3 gamepadRotation = new Vector3(0, Gamepad.current.rightStick.ReadValue().x, 0);
-        Camera.transform.rotation = Quaternion.Euler(Camera.transform.rotation.eulerAngles + gamepadRotation * CameraRotationSpeed * Time.deltaTime);
+        Camera.transform.position = transform.position - direction * 4f + new Vector3(0, 2.5f, 0);
 
-        transform.GetChild(0).transform.rotation = Camera.transform.rotation; // Pour le son
+        Camera.transform.LookAt(transform);
+        transform.GetChild(0).LookAt(transform.GetChild(0).position + direction); // Pour le son
+        Debug.DrawLine(transform.GetChild(0).transform.position, transform.GetChild(0).transform.position + transform.GetChild(0).transform.forward * 2f, Color.red);
+    }
+
+    private void SetRollVolume()
+    {
+        GetComponent<AudioSource>().pitch = WallElement.Map(GetComponent<Rigidbody>().linearVelocity.magnitude, 0f, 1f, .7f, 1f);
+        GetComponent<AudioSource>().volume = WallElement.Map(GetComponent<Rigidbody>().linearVelocity.magnitude, 0f, 1f, 0f, .3f);
     }
 
     public void Rumble(float lowFreq, float highFreq, float seconds)
