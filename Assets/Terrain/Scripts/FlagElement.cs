@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class FlagElement : TerrainElement
 {
 
-    public Scene NextLevel;
+    public string NextLevel;
    
     void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +21,6 @@ public class FlagElement : TerrainElement
     {
         Debug.Log("Hit the win condition !");
         if (NextLevel != null)
-            SceneManager.LoadScene(NextLevel.name);
+            SceneManager.LoadScene(NextLevel);
     }
 }

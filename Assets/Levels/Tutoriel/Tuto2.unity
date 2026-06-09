@@ -563,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drapeau
       objectReference: {fileID: 0}
+    - target: {fileID: 3731351357391614880, guid: 1be0cb6815326551694a6026ce25540e, type: 3}
+      propertyPath: NextLevel
+      value: Tuto3
+      objectReference: {fileID: 0}
     - target: {fileID: 7268719651665000560, guid: 1be0cb6815326551694a6026ce25540e, type: 3}
       propertyPath: m_Volume
       value: 1

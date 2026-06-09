@@ -420,6 +420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drapeau
       objectReference: {fileID: 0}
+    - target: {fileID: 3731351357391614880, guid: 1be0cb6815326551694a6026ce25540e, type: 3}
+      propertyPath: NextLevel
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 7268719651665000560, guid: 1be0cb6815326551694a6026ce25540e, type: 3}
       propertyPath: m_Volume
       value: 1
@@ -1224,6 +1228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb28dbbab09c56a4cb0f4577ceea5255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tuto3
+  AudioClips: []
+  Player: {fileID: 1474831202}
 --- !u!4 &1050628331
 Transform:
   m_ObjectHideFlags: 0
@@ -1367,6 +1373,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4411016288359800424, guid: d89cffb188345ce3eb824d4686a9b38f, type: 3}
   m_PrefabInstance: {fileID: 1128127450}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1474831202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8264480722247069328, guid: d7f1c168ac24e364e9dcadfe08f705cb, type: 3}
+  m_PrefabInstance: {fileID: 389200263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ac9d444d7c4f84e86866cbc8ae123e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
 --- !u!1001 &1693030310
 PrefabInstance:
   m_ObjectHideFlags: 0
