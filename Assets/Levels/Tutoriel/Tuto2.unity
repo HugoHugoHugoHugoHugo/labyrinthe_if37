@@ -189,6 +189,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4411016288359800424, guid: d89cffb188345ce3eb824d4686a9b38f, type: 3}
   m_PrefabInstance: {fileID: 1050525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &71548503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8264480722247069328, guid: d7f1c168ac24e364e9dcadfe08f705cb, type: 3}
+  m_PrefabInstance: {fileID: 389200263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ac9d444d7c4f84e86866cbc8ae123e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
 --- !u!1001 &95344856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,7 +652,6 @@ GameObject:
   m_Component:
   - component: {fileID: 876611734}
   - component: {fileID: 876611733}
-  - component: {fileID: 876611732}
   - component: {fileID: 876611735}
   - component: {fileID: 876611736}
   m_Layer: 0
@@ -651,14 +661,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &876611732
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876611731}
-  m_Enabled: 1
 --- !u!20 &876611733
 Camera:
   m_ObjectHideFlags: 0
@@ -1148,6 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tuto2
   AudioClips: []
+  Player: {fileID: 71548503}
 --- !u!4 &1321383323
 Transform:
   m_ObjectHideFlags: 0

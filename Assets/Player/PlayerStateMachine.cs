@@ -93,5 +93,10 @@ public class PlayerStateMachine : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         CollisionEvent.Invoke(collision);
+
+        if (collision.gameObject.tag.Equals("Wall"))
+        {
+            Rumble(0.2f, 0.5f, .4f);
+        }
     }
 }
