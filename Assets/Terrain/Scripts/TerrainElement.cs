@@ -24,10 +24,15 @@ public class TerrainElement : MonoBehaviour
     void Update()
     {
         MoveAudioSourceNearPlayer();
+        //UpdateElement();
     }
 
+    /*protected virtual void UpdateElement()
+    *{
+    *    
+    *}*/
     //Moves the audio source to the nearest point of the player within bounds of the object
-    void MoveAudioSourceNearPlayer()
+    public void MoveAudioSourceNearPlayer()
     {
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         Vector3 objectPos = transform.position;
@@ -40,4 +45,5 @@ public class TerrainElement : MonoBehaviour
         //Move the audio source to the new position
         Source.transform.position = transform.position + newPos;
     }
+
 }

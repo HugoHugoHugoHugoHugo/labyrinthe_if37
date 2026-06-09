@@ -9,11 +9,13 @@ public class PlayerPlaceholderControls : MonoBehaviour
     public float MouseSensitivity;
     public float Speed;
     public Camera Camera;
+    private AudioSource m_source;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         m_playerInput = GetComponent<PlayerInput>();
         m_playerRigidbody = GetComponent<Rigidbody>();
+        m_source = GetComponent<AudioSource>();
         m_previousMovement = new Vector2(0,0);
     }
 
@@ -29,7 +31,11 @@ public class PlayerPlaceholderControls : MonoBehaviour
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
         Vector3 angularVelocity = new Vector3(0,mouseDelta.x,0);
         Camera.transform.rotation = Quaternion.Euler(Camera.transform.rotation.eulerAngles + angularVelocity*Time.deltaTime*MouseSensitivity);
-        Camera.transform.position = transform.position;    
+        Camera.transform.position = transform.position;
+        Vector3 playerVelocity = this.gameObject.GetComponent<Rigidbody>().linearVelocity;
+        Debug.Log(playerVelocity.magnitude);
+        m_source.pitch=SuperLerp(0.7f,1f,0f,.5f,playerVelocity.magnitude);
+        m_source.volume=SuperLerp(0f,1f,0f,.5f,playerVelocity.magnitude);
     }
 
     public void Move(Vector2 movement)
@@ -46,4 +52,15 @@ public class PlayerPlaceholderControls : MonoBehaviour
         Vector3 vector3 = new Vector3(vect2.x,0,vect2.y);
         return vector3;
     } 
+    private float SuperLerp (float from,float to,float from2,float to2,float value) {
+        if (value <= from2)
+        {
+            return from;
+        }
+        else if (value >= to2)
+        {
+            return to;
+        }
+        return (to - from) * ((value - from2) / (to2 - from2)) + from;
+    }
 }
