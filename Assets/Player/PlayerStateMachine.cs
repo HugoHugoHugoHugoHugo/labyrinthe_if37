@@ -107,7 +107,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        CollisionEvent.Invoke(collision);
+        CollisionEvent?.Invoke(collision);
 
         if (collision.gameObject.tag.Equals("Wall"))
         {
