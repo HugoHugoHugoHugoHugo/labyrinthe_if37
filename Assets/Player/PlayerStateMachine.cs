@@ -2,6 +2,7 @@ using OperatorOverload.Bridge.Serialization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.DualShock;
@@ -106,7 +107,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        CollisionEvent.Invoke(collision);
+        CollisionEvent?.Invoke(collision);
 
         if (collision.gameObject.tag.Equals("Wall"))
         {
