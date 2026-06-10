@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class ExplorationPlayerState : PlayerState
 {
 
-    private float forceCoeff = 500f;
+    private float forceCoeff = 250f;
     private Vector3 initalPos;
 
     private InputAction marqueurAction;

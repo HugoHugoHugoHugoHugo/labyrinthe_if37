@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8720880579645649823}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WallElement
   Caracteristics: {fileID: 11400000, guid: 69e4dbdaa7ea8228fa017993f1ffa8ad, type: 2}
   OnContactSound: {fileID: 8300000, guid: 71dbd571b6859f395afd900babfef4e1, type: 3}
-  ContinuousSound: {fileID: 8300000, guid: a65dba3a10c9ff7cc85727cd11127478, type: 3}
+  ContinuousSound: {fileID: 8300000, guid: 7c06ba4e97c787643acdd73ea64158ae, type: 3}
   Source: {fileID: 1748342709600354877}
   PitchModifier: 1
 --- !u!1 &8328642854101485173
@@ -174,7 +174,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6724683928183659429, guid: c991752758abad93db3132e7a52987b4, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a65dba3a10c9ff7cc85727cd11127478, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7c06ba4e97c787643acdd73ea64158ae, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

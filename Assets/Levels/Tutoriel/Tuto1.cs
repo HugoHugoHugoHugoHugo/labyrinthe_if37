@@ -24,8 +24,9 @@ public class Tuto1 : TutorialManager
         {
             if (wallElem.gameObject.Equals(collision.gameObject))
             {
-                Debug.Log("Wall touched");
-                wallTouched[Array.IndexOf(Walls, wallElem)] = true;
+                int wallIndex = Array.IndexOf(Walls, wallElem);
+                Debug.Log("Wall" + wallIndex + "touched !");
+                wallTouched[wallIndex] = true;
             }
         }
 
@@ -38,7 +39,7 @@ public class Tuto1 : TutorialManager
 
     private void destroyWall()
     {
-        Destroy(Walls[0]);
+        Destroy(Walls[0].gameObject);
     }
 
     void Update()

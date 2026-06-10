@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4892418746004104190}
   m_Layer: 0
   m_Name: Drapeau
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   OnContactSound: {fileID: 8300000, guid: 650f2ac2d247cc2a684ca2fbb6a8530e, type: 3}
   ContinuousSound: {fileID: 8300000, guid: 0e523647adbf1855bb9a7241c40c9510, type: 3}
   Source: {fileID: 7268719651665000560}
+  NextLevel: {}
 --- !u!23 &1679612295153990406
 MeshRenderer:
   m_ObjectHideFlags: 0
