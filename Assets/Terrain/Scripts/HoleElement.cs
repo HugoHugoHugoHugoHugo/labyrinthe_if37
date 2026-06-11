@@ -9,7 +9,10 @@ public class HoleElement : TerrainElement
         {
             other.gameObject.GetComponent<PlayerStateMachine>().Rumble(1f, 0.1f, 1f);
             if (other.gameObject.GetComponent<PlayerStateMachine>().State is ActionPlayerState)
-                HoleHit();
+            {
+                Source.PlayOneShot(OnContactSound);
+                Invoke(nameof(HoleHit), 1f);
+            }
         }
     }
     void HoleHit()

@@ -57,10 +57,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlagElement
   Caracteristics: {fileID: 11400000, guid: 78e45772efc055eb98293dd13996b53d, type: 2}
-  OnContactSound: {fileID: 8300000, guid: 650f2ac2d247cc2a684ca2fbb6a8530e, type: 3}
-  ContinuousSound: {fileID: 8300000, guid: 0e523647adbf1855bb9a7241c40c9510, type: 3}
+  OnContactSound: {fileID: 8300000, guid: 1a46927bbe37cfd4f8f0d6ef0340a8d7, type: 3}
+  ContinuousSound: {fileID: 8300000, guid: 6a342382b0a83804781e6d58444a4ff2, type: 3}
   Source: {fileID: 7268719651665000560}
-  NextLevel: {}
+  NextLevel: 
 --- !u!23 &1679612295153990406
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6724683928183659429, guid: c991752758abad93db3132e7a52987b4, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 0e523647adbf1855bb9a7241c40c9510, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6a342382b0a83804781e6d58444a4ff2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

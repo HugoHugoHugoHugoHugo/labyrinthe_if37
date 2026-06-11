@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6724683928183659429, guid: c991752758abad93db3132e7a52987b4, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2a3d5b4dcd472566f8ea8c7905136671, type: 3}
+  m_Resource: {fileID: 8300000, guid: f1cc7dd0757e0af44939b6ad3d9d0e1f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoleElement
   Caracteristics: {fileID: 11400000, guid: d4ff084718f54b24f8245fe238b487a7, type: 2}
-  OnContactSound: {fileID: 0}
-  ContinuousSound: {fileID: 8300000, guid: 2a3d5b4dcd472566f8ea8c7905136671, type: 3}
+  OnContactSound: {fileID: 8300000, guid: 363d56a9f1b37dd4ab6cd8c8fa99bd7e, type: 3}
+  ContinuousSound: {fileID: 8300000, guid: f1cc7dd0757e0af44939b6ad3d9d0e1f, type: 3}
   Source: {fileID: 4427976289551428758}
 --- !u!23 &785691800462947331
 MeshRenderer:

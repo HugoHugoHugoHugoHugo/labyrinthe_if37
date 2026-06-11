@@ -20,7 +20,7 @@ public class WallElement : TerrainElement
             Vector3 playerVelocity = collision.gameObject.GetComponent<Rigidbody>().linearVelocity;
             Debug.Log(playerVelocity.magnitude);
             Source.pitch=Map(playerVelocity.magnitude,0f,1f,0.7f,1f);
-            Source.volume=Map(playerVelocity.magnitude,0f, 1f,0f,2f);
+            Source.volume=Map(playerVelocity.magnitude,0f, 1.5f,0f,2f);
         }
     }
     void OnCollisionExit(Collision collision)

@@ -87,7 +87,7 @@ public class PlayerStateMachine : MonoBehaviour
     private void SetRollVolume()
     {
         GetComponent<AudioSource>().pitch = WallElement.Map(GetComponent<Rigidbody>().linearVelocity.magnitude, 0f, 1f, .7f, 1f);
-        GetComponent<AudioSource>().volume = WallElement.Map(GetComponent<Rigidbody>().linearVelocity.magnitude, 0f, 1f, 0f, .1f);
+        GetComponent<AudioSource>().volume = WallElement.Map(GetComponent<Rigidbody>().linearVelocity.magnitude, 0f, 1.5f, 0f, .1f);
         //Mathf.Clamp(GetComponent<AudioSource>().volume, 0f, 1f);
     }
 

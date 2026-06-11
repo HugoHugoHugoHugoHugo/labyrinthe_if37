@@ -10,10 +10,13 @@ public class FlagElement : TerrainElement
     {
         if (collision.gameObject.tag == "Player")
         {
-            Source.PlayOneShot(OnContactSound);
             collision.gameObject.GetComponent<PlayerStateMachine>().Rumble(0.1f, 1f, 1f);
             if (collision.gameObject.GetComponent<PlayerStateMachine>().State is ActionPlayerState)
-                FlagHit();
+            {
+                Source.PlayOneShot(OnContactSound);
+                Invoke(nameof(FlagHit), 1f);
+            }
+                
             
         }
     }
