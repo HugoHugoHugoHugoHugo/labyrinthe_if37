@@ -273,8 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378f1fe6b89659bd885cc39b8e9b2997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
-  PauseMenuUI: {fileID: 4743954342947979640}
-  FirstSelected: {fileID: 269787125132332723}
   AudioUnpaused: {fileID: 24500006, guid: c991752758abad93db3132e7a52987b4, type: 2}
   AudioPaused: {fileID: -3318717779827839054, guid: c991752758abad93db3132e7a52987b4, type: 2}
 --- !u!1001 &1815854986333235067
@@ -423,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 3134789048378069736, guid: e570802b605153fdaaf316d1b0094933, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: a067aba0816c9e5aebe53de3ecd9f1b8, type: 3}
+      objectReference: {fileID: 8300000, guid: 0dd6bb0ecfe5ad74e925b48625e7bf07, type: 3}
     - target: {fileID: 4961991304317356766, guid: e570802b605153fdaaf316d1b0094933, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
