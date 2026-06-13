@@ -33,13 +33,17 @@ public class MainMenu : MonoBehaviour
 
     public void Update()
     {
-        if(EventSystem.current.currentSelectedGameObject != m_currentSelectedButton)
+        if (m_currentSelectedButton)
         {
-            m_currentSelectedButton.GetComponent<AudioSource>().Stop();
-            m_currentSelectedButton = EventSystem.current.currentSelectedGameObject;
-            Debug.Log(m_currentSelectedButton.name);
-            m_currentSelectedButton.GetComponent<AudioSource>().Play();
+            if (EventSystem.current.currentSelectedGameObject != m_currentSelectedButton)
+            {
+                m_currentSelectedButton.GetComponent<AudioSource>().Stop();
+                m_currentSelectedButton = EventSystem.current.currentSelectedGameObject;
+                Debug.Log(m_currentSelectedButton.name);
+                m_currentSelectedButton.GetComponent<AudioSource>().Play();
+            }
         }
+        
     }
     public void GoToScene(string sceneName)
     {
