@@ -5,11 +5,6 @@ public class Tuto3 : TutorialManager
 
     public PlayerStateMachine Player;
 
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
@@ -20,7 +15,7 @@ public class Tuto3 : TutorialManager
         else if (Player.State is ActionPlayerState && clipIndex == 2)
         {
             PlayNextClip();
-            PlayNextClip(10f);
+            Invoke(nameof(PlayNextClip), 10f);
         }
     }
 }

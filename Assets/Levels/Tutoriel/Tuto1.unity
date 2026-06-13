@@ -1369,8 +1369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tuto1
   AudioClips:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: b79adafdaaf03de428083b34fe33032a, type: 3}
+  - {fileID: 8300000, guid: 7d8c31bb4d5d19345a5f7a1ba02cf5b6, type: 3}
   Walls:
   - {fileID: 1589801294}
   - {fileID: 1947187188}

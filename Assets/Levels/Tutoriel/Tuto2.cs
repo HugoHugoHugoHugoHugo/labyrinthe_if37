@@ -5,7 +5,7 @@ public class Tuto2 : TutorialManager
 
     public PlayerStateMachine Player;
 
-    void Start()
+    protected override void Init()
     {
         Player.CollisionEvent += OnPlayerCollision;
     }

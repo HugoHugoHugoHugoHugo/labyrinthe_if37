@@ -1325,7 +1325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb28dbbab09c56a4cb0f4577ceea5255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tuto3
-  AudioClips: []
+  AudioClips:
+  - {fileID: 8300000, guid: 7061076579779a349aa77363b5e5b96b, type: 3}
+  - {fileID: 8300000, guid: 862f8d5c2892da14eb95394acf23e854, type: 3}
+  - {fileID: 8300000, guid: dd5b0c5cbc7985d4dbaefb1dce89e038, type: 3}
+  - {fileID: 8300000, guid: cfff86bcee23e5d4bbd28cc9c76b2617, type: 3}
   Player: {fileID: 1474831202}
 --- !u!4 &1050628331
 Transform:
